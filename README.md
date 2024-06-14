@@ -3,19 +3,17 @@
 This is a PyTorch implementation of "Distributional Shortest-Path Graph Kernels" submitted to ICDM 2024.
 
 ## Requirements
-See `requriements.txt` for required Python libraries .
+See `requriements.txt` for required Python libraries.
 
-Test on a server with a dual-core Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz, 256 GB, NVIDIA RTX 3090 GPU, 24GB and Ubuntu 18.04.6 LTS operating system.
+Test on a server with a dual-core Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz, 256 GB, NVIDIA RTX 3090 GPU, 24GB, and Ubuntu 18.04.6 LTS operating system.
 
-## Train from Scatch
+## Train from Scratch
 
 ### Train Tokenizer
 Run the following command in the terminal to train a tokenizer:
 ```
 python tokenizer.py --dataset MUTAG --depth 7
 ```
-The depth 7 here corresponds to k=6 in the paper.
-
 
 ### Train Model
 
@@ -27,7 +25,7 @@ The model is saved in "./model/MUTAG/best_model.pkl".
 
 ### Save Shortest-Path Embeddings (Optional)
 
-Run the following command in the terminal to save the embeddings of shortest paths:
+Run the following command in the terminal to save the embeddings of the shortest paths:
 ```
 python save_sp_emb.py --dataset MUTAG --depth 7 --tokenizer_file ./tokenizer/MUTAG/depth_7_tokenizer.json --model_file ./model/MUTAG/best_model.pkl
 ```
