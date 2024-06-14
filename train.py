@@ -51,7 +51,7 @@ if __name__ == '__main__':
                         help='whether to save model or not')
     args = parser.parse_args()
     
-    logging.info(f'dataset={args.dataset}, d={args.depth-1}')
+    logging.info(f'dataset={args.dataset}, d={args.depth}')
     
     if args.use_gpu:
         logging.info(f'gpu id is {args.gpu_id}')
