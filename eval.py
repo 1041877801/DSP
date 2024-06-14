@@ -130,7 +130,7 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     
-    logging.info(f'dataset={args.dataset}, d={args.depth-1}')
+    logging.info(f'dataset={args.dataset}, k={args.depth}')
     
     torch.manual_seed(42)
     torch.cuda.manual_seed(42)
@@ -149,12 +149,12 @@ if __name__ == '__main__':
     time_start = time.time()
     
     node_embeddings = []
-    for d in range(args.depth):
+    for k in range(args.depth):
         if args.load_embedding:
-            node_embedding = pickle.load(open(f'./sp_embs/{args.dataset}/emb_{d+1}.pkl', 'rb'))
+            node_embedding = pickle.load(open(f'./sp_embs/{args.dataset}/emb_{k+1}.pkl', 'rb'))
             node_embedding = np.array(node_embedding)
         else:
-            corpus_files = [f'./corpus/{args.dataset}/sp_depth_{d+1}']
+            corpus_files = [f'./corpus/{args.dataset}/sp_depth_{k+1}']
         
             all_data = MyDataset(corpus_files, tokenizer)
             
