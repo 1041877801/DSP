@@ -32,7 +32,7 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     
-    logging.info(f'dataset={args.dataset}, d={args.depth-1}')
+    logging.info(f'dataset={args.dataset}, d={args.depth}')
     
     torch.manual_seed(42)
     torch.cuda.manual_seed(42)
